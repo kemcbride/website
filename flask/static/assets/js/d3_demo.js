@@ -1,5 +1,3 @@
-// This is a javascript library file to be loaded & accessed under route /demo !
-//
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 var rawData = `Ohh
@@ -96,11 +94,6 @@ for (var item in splitData) {
   
 }
 
-
-// Log to console
-console.log(splitData[13])
-console.log(data)
-
 var words = Object.keys(data)
 
 var freqs = []
@@ -108,15 +101,10 @@ for (var item in data) {
     freqs.push( {word: item, freq: data[item]})
 }
 
-console.log(freqs)
-console.log(freqs[0])
-console.log(freqs[0].word)
-console.log(freqs[0].freq)
-
 // Sort by frequency descending
 freqs.sort((a, b) => b.freq - a.freq);
 
-var nice = freqs.slice(0, 10)
+var nice = freqs.slice(0, 20)
 console.log(nice)
 
 console.log(splitData.length)
