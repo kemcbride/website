@@ -23,6 +23,9 @@ uwsgi-prod:
 vite-dev:
 	cd flask && npm run dev
 
+vite-build:
+	cd flask && npm run build
+
 docker-build:
 	cd flask && sudo docker build -t tech4taxes-website .
 
