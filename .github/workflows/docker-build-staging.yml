@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  pull_request_target:
+    types: [ opened, labeled ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: docker/github-builder/.github/workflows/build.yml@v1
+    if: (github.repository == 'tech4taxes/website') && (github.event.label.name == 'staging')
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      context: flask
+      output: image
+      push: true
+      labels: 'latest'
+      platforms: linux/amd64,linux/arm64
+      meta-images: user/app
+      meta-tags: |
+        type=ref,event=branch
+        type=ref,event=pr
+        type=semver,pattern={{version}}
+        type=semver,pattern={{major}}.{{minor}}
+    secrets:
+      registry-auths: |
+        - registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
