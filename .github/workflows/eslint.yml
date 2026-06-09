@@ -1,6 +1,6 @@
 name: Run TS Lint & NPM Build
 
-on: [push]
+on: [pull_request]
 
 jobs:
   lint:
