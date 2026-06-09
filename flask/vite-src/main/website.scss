@@ -1,3 +1,4 @@
+/* https://coolors.co/ff5722-ff5a00-fc1303 */
 $orange: rgb(255, 87, 34);
 $lite-orange: rgb(255, 90, 0);
 $dark-orange: rgb(252, 19, 3);
@@ -77,7 +78,7 @@ body {
 /* Ensure the body content starts below the header */
 a {
   text-decoration: underline;
-  color: #ff5a00;
+  color: $lite-orange;
 }
 
 a:hover {
