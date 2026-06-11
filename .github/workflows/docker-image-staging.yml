@@ -27,9 +27,6 @@ jobs:
       meta-images: ghcr.io/tech4taxes/website
       meta-tags: |
         type=ref,event=branch
-        type=ref,event=pr
-        type=semver,pattern={{version}}
-        type=semver,pattern={{major}}.{{minor}}
         type=raw,tech4taxes-website-latest-staging
     secrets:
       registry-auths: |
