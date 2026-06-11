@@ -53,7 +53,7 @@ fi
 cd flask
 
 echo "Setting up Node.js"
-node_version="22"
+node_version="26"
 nvm install "$node_version"
 nvm use "$node_version"
 npm install
