@@ -8,7 +8,6 @@ flask/share/
 flask/.vite/
 flask/node_modules/
 .vite
-package-lock.json
 dist
 **/.DS_STORE
 node_modules
